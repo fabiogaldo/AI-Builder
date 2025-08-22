@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node ./node_modules/next/dist/bin/next dev",
+    "dev": "node ./node_modules/next/dist/bin/next dev --hostname 0.0.0.0 --port 3001",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -22,6 +22,7 @@
     "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tabs": "^1.1.12",
+    "@supabase/ssr": "^0.7.0",
     "@types/sharp": "^0.31.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
