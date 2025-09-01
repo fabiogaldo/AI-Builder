@@ -42,30 +42,32 @@ export default function SignUpPage() {
                     <CardDescription>Insira seu e-mail e senha para se cadastrar.</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                    <div className="space-y-2">
-                        <Label htmlFor="email">Email</Label>
-                        <Input
-                            id="email"
-                            placeholder="seu@email.com"
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div className="space-y-2">
-                        <Label htmlFor="password">Senha</Label>
-                        <Input
-                            id="password"
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <Button type="submit" className="w-full" onClick={handleSignUp} disabled={loading}>
-                        {loading ? 'Cadastrando...' : 'Cadastrar'}
-                    </Button>
+                    <form onSubmit={handleSignUp} className="space-y-4">
+                        <div className="space-y-2">
+                            <Label htmlFor="email">Email</Label>
+                            <Input
+                                id="email"
+                                placeholder="seu@email.com"
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="space-y-2">
+                            <Label htmlFor="password">Senha</Label>
+                            <Input
+                                id="password"
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <Button type="submit" className="w-full" disabled={loading}>
+                            {loading ? 'Cadastrando...' : 'Cadastrar'}
+                        </Button>
+                    </form>
                     {message && (
                         <p className={message.startsWith('Erro') ? 'text-red-500' : 'text-green-500'}>
                             {message}
